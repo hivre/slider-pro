@@ -4418,7 +4418,7 @@
 })( window, jQuery );
 
 // Arrows module for Slider Pro.
-// 
+//
 // Adds arrows for navigating to the next or previous slide.
 ;(function( window, $ ) {
 
@@ -4448,9 +4448,17 @@
 			// Create the arrows if the 'arrows' option is set to true
 			if ( this.settings.arrows === true && this.$arrows === null ) {
 				this.$arrows = $( '<div class="sp-arrows"></div>' ).appendTo( this.$slidesContainer );
-				
+
 				this.$previousArrow = $( '<div class="sp-arrow sp-previous-arrow"></div>' ).appendTo( this.$arrows );
 				this.$nextArrow = $( '<div class="sp-arrow sp-next-arrow"></div>' ).appendTo( this.$arrows );
+
+				// set styling dynamic to the current slide height
+				// This should be something like this.$slider.slideHeight
+				// or get the actual css-in-browser height from the current slide.
+				var slideHeight = this.options.height;
+
+				$(this.$previousArrow).css({'height': slideHeight, 'margin-top': -slideHeight/2});
+				$(this.$nextArrow).css({'height': slideHeight, 'margin-top': -slideHeight/2});
 
 				this.$previousArrow.on( 'click.' + NS, function() {
 					that.previousSlide();
@@ -4492,7 +4500,7 @@
 				this.$nextArrow.css( 'display', 'block' );
 			}
 		},
-		
+
 		_removeArrows: function() {
 			if ( this.$arrows !== null ) {
 				this.$previousArrow.off( 'click.' + NS );
@@ -4521,6 +4529,7 @@
 	$.SliderPro.addModule( 'Arrows', Arrows );
 
 })( window, jQuery );
+
 
 // Thumbnail Touch Swipe module for Slider Pro.
 // 

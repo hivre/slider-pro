@@ -441,8 +441,8 @@
 .sp-arrow {
 	position: absolute;
 	display: block;
-	width: 20px;
-	height: 30px;
+	width: 10%;
+	/* height: 30px; */
 	cursor: pointer;
 }
 
@@ -453,11 +453,11 @@
 }
 
 .sp-horizontal .sp-previous-arrow {
-	left: 20px;
+	left: 0px;
 }
 
 .sp-horizontal .sp-next-arrow {
-	right: 20px;
+	right: 0px;
 }
 
 .sp-vertical .sp-previous-arrow {
@@ -474,9 +474,10 @@
 .sp-next-arrow:after {
 	content: '';
 	position: absolute;
-	width: 50%;
-	height: 50%;
+	width: 15%;
+	height: 5%;
 	background-color: #FFF;
+	margin-top: 200%;
 }
 
 .sp-previous-arrow:before {
@@ -489,7 +490,7 @@
 
 .sp-previous-arrow:after {
 	left: 30%;
-	top: 50%;
+	top: 5%;
 	-webkit-transform: skew(-145deg, 0deg);
 	-ms-transform: skew(-145deg, 0deg);
 	transform: skew(-145deg, 0deg);
@@ -505,7 +506,7 @@
 
 .sp-next-arrow:after {
 	right: 30%;
-	top: 50%;
+	top: 5%;
 	-webkit-transform: skew(-35deg, 0deg);
 	-ms-transform: skew(-35deg, 0deg);
 	transform: skew(-35deg, 0deg);
@@ -551,6 +552,7 @@
 	border-left: 20px solid transparent;
 	border-right: 20px solid transparent;
 }
+
 
 /* Thumbnail Arrows
 --------------------------------------------------*/
